@@ -62,7 +62,7 @@ Template.databaseList.helpers({
 });
 
 
-Router.route('/', function () {
+Router.route('', function () {
 this.render('AgeCalc')	});
 Router.route('/requestView', function () {
 	this.render('databaseList')	
