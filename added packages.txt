@@ -1,0 +1,3 @@
+$ meteor add twbs:bootstrap
+$ meteor add tsega:bootstrap3-datetimepicker 
+meteor add iron:router
