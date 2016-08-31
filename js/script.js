@@ -54,7 +54,7 @@ function formCheck(e) {
 		var $form = $('form');
 		console.log( $form.submit( function (){	 return $.post($(this).attr({action: 'sqlinsert.php'}));
 		});
-		)
+		);
 		$("#birthday").val(birthday); // put birthday back to date formate
 		//myform.submit();
 	}
