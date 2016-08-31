@@ -1,5 +1,4 @@
 <?php
-
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -42,12 +41,12 @@ $birthdayStr=$birthdaySQL->format('Y-m-d H:i:s');
 //echo $birthdayStr;
 //echo "<br>";
 
-$sql = "INSERT INTO record_of_request (Name, BirthDate, EntryDate, AgeRecorded) Values('$name','$birthdayStr','$timestampStr','$ageRecorded')";
+$insertState = "INSERT INTO record_of_request (Name, BirthDate, EntryDate, AgeRecorded) Values('$name','$birthdayStr','$timestampStr','$ageRecorded')";
 
 
-$conn->query($sql);
+$conn->query($insertState);
 
 $conn->close();
 
-//echo "done";
+echo "done";
 ?>
