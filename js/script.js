@@ -57,7 +57,7 @@ function formCheck(e) {
 		//	return false;
 		//});
 		//$("#birthday").val(birthday); // put birthday back to date formate
-		myform.submite();
+		myform.submit();
 	}
 	else
 	{
