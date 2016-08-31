@@ -52,10 +52,9 @@ function formCheck(e) {
 		$("#ResultOutput").text("You have been alive "+age.val()+ " days.");
 		
 		var $form = $('form');
-		$form.submit( function (){
-			 $.post($(this).attr({action: 'sqlinsert.php'}),'json');
-			return false;
+		console.log( $form.submit( function (){	 return $.post($(this).attr({action: 'sqlinsert.php'}));
 		});
+		)
 		$("#birthday").val(birthday); // put birthday back to date formate
 		//myform.submit();
 	}
