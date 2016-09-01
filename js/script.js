@@ -51,11 +51,21 @@ function formCheck(e) {
 		
 		$("#ResultOutput").text("You have been alive "+age.val()+ " days.");
 		
-		var $form = $('form');
-		$form.submit( function (){
-			 $.post($(this).attr({action: 'sqlinsert.php'}),'json');
-			return false;
+		// var $form = $('form');
+		// $form.submit( function (){
+			 // $.post($(this).attr({action: 'sqlinsert.php'}));
+			// return false;
+		// });
+		
+		$.ajax({
+			url: 'sqlinsert.php',
+			type: 'POST',
+			data: $('form').serialize(),
+			success:  function()			{
+				alert('SQL saved');
+			} 
 		});
+		
 		$("#birthday").val(birthday); // put birthday back to date formate
 		//myform.submit();
 	}
