@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM agecalcsql1.record_of_request;";
+$callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
 
 
 $data=$conn->query($callState);
