@@ -1,4 +1,5 @@
 <?php
+echo "hello";
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -10,24 +11,24 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$insertState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM agecalcsql1.record_of_request;";
+$callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM agecalcsql1.record_of_request;";
 
 
-$data=$conn->query($insertState);
+$data=$conn->query($callState);
 
 $conn->close();
 
-echo '<table> 
+echo "<table> 
 	<tr>
     <th>Name</th>
     <th>Entered Birtday</th> 
     <th>Date Entered</th>
 	<th>Age Reported</th>
-	</tr>'
+	</tr>";
 
 foreach ($data as $row){
-	echo '<tr> <td> $row["Name"] </td> <td> $row["BirthDate"] </td> <td> $row["EntryDate"] </td> <td> $row["AgeRecorded"] </td> </tr>'
+	echo "<tr> <td>" . $row['Name'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td> </tr>";
 }
 	
-echo '</table>'	
+echo "</table>";
  ?>
