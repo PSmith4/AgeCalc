@@ -1,5 +1,5 @@
 <?php
-echo "hello";
+
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -17,7 +17,7 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 $data=$conn->query($callState);
 
 $conn->close();
-
+echo '<link rel="stylesheet" type="text/css" href="css/style.css"/>';
 echo "<table> 
 	<tr>
     <th>Name</th>
