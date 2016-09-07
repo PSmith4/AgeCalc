@@ -49,7 +49,7 @@ function formCheck(e) {
 									type: 'hidden',
 									id:   'MarsageRecorded',
 									name:   'MarsageRecorded',
-									value: Math.floor(age.val()*1.0278) //mars day is 1d 0h 40m according to google which is (24*60+40)/(24*60)=1.0278 times longer
+									value: Math.floor(age.val()*1.0278)}) //mars day is 1d 0h 40m according to google which is (24*60+40)/(24*60)=1.0278 times longer
 								.appendTo('#AgeForm');	
 							
 								
