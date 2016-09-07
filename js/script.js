@@ -28,7 +28,7 @@ function formCheck(e) {
 	if (warning =="")
 	{
 		var date = new Date();
-		var birthday = $("#birthday").val()
+		var birthday = $("#birthday").val();
 		
 		var DOBSplit= birthday.split('/');
 		var DOB_asDate=new Date(DOBSplit[1]+'/'+DOBSplit[0]+'/'+DOBSplit[2]);
@@ -37,7 +37,7 @@ function formCheck(e) {
 		console.log(DOB_asDate);
 		console.log(date);
 	
-		var dif= date-DOB_asDate
+		var dif= date-DOB_asDate;
 		var age = $("<input>").attr({
 									type: 'hidden',
 									id:   'ageRecorded',
