@@ -3,7 +3,7 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
-$dbname =  substr($url["path"], 2);
+$dbname =  substr($url["path"], 1);
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -43,7 +43,7 @@ $birthdayStr=$birthdaySQL->format('Y-m-d H:i:s');
 //echo $birthdayStr;
 //echo "<br>";
 
-$insertState = "INSERT INTO record_of_request (FName, SName, BirthDate, EntryDate, AgeRecorded, MarsAgeRecorded) Values('$Fname','$Sname','$birthdayStr','$timestampStr','$ageRecorded','$MarsageRecorded')";
+$insertState = "INSERT INTO record_of_request2 (FName, SName, BirthDate, EntryDate, AgeRecorded, MarsAgeRecorded) Values('$Fname','$Sname','$birthdayStr','$timestampStr','$ageRecorded','$MarsageRecorded')";
 
 
 $conn->query($insertState);
