@@ -61,7 +61,7 @@ function formCheck(e) {
 							.appendTo('#AgeForm');
 		
 		
-		$("#ResultOutput").text("You have been alive "+age.val()+ " days.</br>Thats" +martianAge.val()+" martian days.");
+		$("#ResultOutput").text("You have been alive "+age.val()+ " days. That's " +martianAge.val()+" martian days.");
 		
 		// var $form = $('form');
 		// $form.submit( function (){

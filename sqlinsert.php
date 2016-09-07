@@ -14,7 +14,7 @@ $Fname = mysqli_real_escape_string($conn, $_POST['Fname']);
 $Sname = mysqli_real_escape_string($conn, $_POST['Sname']);
 $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
 $ageRecorded = mysqli_real_escape_string($conn, $_POST['ageRecorded']);
-$MarsageRecorded = mysqli_real_escape_string($conn, $_POST['MarsAgeRecorded']);
+$MarsageRecorded = mysqli_real_escape_string($conn, $_POST['MarsageRecorded']);
 $timestamp = mysqli_real_escape_string($conn, $_POST['timestamp']);
 
 //echo $name;
