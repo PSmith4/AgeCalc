@@ -20,10 +20,8 @@ $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
 foreach ($data as $row){
 	echo "$row['FName']\n";
-	$names explode(' ', $row['FName']);
-	echo "$names[0]\n";
-	echo "$names[1]\n";
-	$SqlStatment ="	UPDATE record_of_request2	SET FName=$names[0], SName=$names[1]	WHERE ID=$row['ID'];";
-	$conn->query($SQLStatment);
+	$names explode(" ", $row['FName']);
+	echo $names[0];
+	echo $names[1];
 }
 ?>
