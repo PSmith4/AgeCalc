@@ -19,12 +19,9 @@ echo "Tabel Recreation done";
 $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
 foreach ($data as $row){
-	echo "$row['FName']";
+	echo $row['FName'];
 	$names explode(' ', $row['FName']);
-	$SqlStatment ="
-	UPDATE record_of_request2
-	SET FName=$names[0], SName=$names[1]
-	WHERE ID=$row['ID'];";
+	$SqlStatment ="	UPDATE record_of_request2	SET FName=$names[0], SName=$names[1]	WHERE ID=$row['ID'];";
 	$conn->query($SQLStatment);
 }
 ?>
