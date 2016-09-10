@@ -12,11 +12,14 @@ function formCheck(e) {
 	e.preventDefault();
 	console.log("outputting");
 	//check first name has something
-	if ($("#name").val()=="")
+	if ($("#Fname").val()=="")
 	 {
-		 warning=warning+"You haven't entered you name. <br/>";
+		 warning=warning+"You haven't entered you first name. <br/>";
 	 }
-	
+	if ($("#Sname").val()=="")
+	 {
+		 warning=warning+"You haven't entered you last name. <br/>";
+	 }
 	if ($("#birthday").val()=="")
 	{
 		warning=warning+"You haven't entered you birthday <br/>";
@@ -41,6 +44,15 @@ function formCheck(e) {
 									name:   'ageRecorded',
 									value: Math.ceil(dif/1000/60/60/24)}) //convert back from millsec to days
 								.appendTo('#AgeForm');
+		
+		var martianAge = $("<input>").attr({
+									type: 'hidden',
+									id:   'MarsageRecorded',
+									name:   'MarsageRecorded',
+									value: Math.floor(age.val()*1.0278)}) //mars day is 1d 0h 40m according to google which is (24*60+40)/(24*60)=1.0278 times longer
+								.appendTo('#AgeForm');	
+							
+								
 		date = $("<input>").attr({
 							type: 'hidden',
 							id: 'timestamp',
@@ -49,7 +61,7 @@ function formCheck(e) {
 							.appendTo('#AgeForm');
 		
 		
-		$("#ResultOutput").text("You have been alive "+age.val()+ " days.");
+		$("#ResultOutput").text("You have been alive "+age.val()+ " days. That's " +martianAge.val()+" martian days.");
 		
 		// var $form = $('form');
 		// $form.submit( function (){
