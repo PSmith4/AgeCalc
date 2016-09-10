@@ -1,5 +1,5 @@
 <?php
-
+echo "start";
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $servername = $url["host"];
 $username = $url["user"];
@@ -28,14 +28,14 @@ CREATE TABLE `record_of_request2` (
 
 insert into record_of_request2 (FName, BirthDate, EntryDate, AgeRecorded)
 Select Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;"
-
+echo $SQLStatment
 $conn->query($SQLStatment);
 echo "Tabel Recreation done";
 
 $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
 foreach ($data as $row){
-	echo "$row['FName']";
+	echo $row['FName'];
 	$names explode(' ', $row['FName']);
 	$SqlStatment ="
 	UPDATE record_of_request2
