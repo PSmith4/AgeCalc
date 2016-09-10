@@ -19,9 +19,6 @@ echo "Tabel Recreation done";
 $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
 foreach ($data as $row){
-	echo "$row['FName']\n";
 	$names explode(" ", $row['FName']);
-	echo $names[0];
-	echo $names[1];
 }
 ?>
