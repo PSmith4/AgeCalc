@@ -44,10 +44,7 @@ foreach ($data as $row){
 	{
 		echo $names[1];
 		echo "<br>";
-		$SqlStatment = "UPDATE record_of_request2 SET FName='" . $names[0] . "' , SName= '". $names[1] ."' WHERE ID= ". $row['ID'] . ";";
-		echo $SqlStatment;
-		if ($conn->query($SQLStatment) === TRUE){ echo "Update done";} 
-		else {echo "Error updateing " . $conn->error;}
+		
 	}
 }
 
