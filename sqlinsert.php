@@ -10,9 +10,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$name = mysqli_real_escape_string($conn, $_POST['name']);
+$Fname = mysqli_real_escape_string($conn, $_POST['Fname']);
+$Sname = mysqli_real_escape_string($conn, $_POST['Sname']);
 $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
 $ageRecorded = mysqli_real_escape_string($conn, $_POST['ageRecorded']);
+$MarsageRecorded = mysqli_real_escape_string($conn, $_POST['MarsageRecorded']);
 $timestamp = mysqli_real_escape_string($conn, $_POST['timestamp']);
 
 //echo $name;
@@ -41,7 +43,7 @@ $birthdayStr=$birthdaySQL->format('Y-m-d H:i:s');
 //echo $birthdayStr;
 //echo "<br>";
 
-$insertState = "INSERT INTO record_of_request (Name, BirthDate, EntryDate, AgeRecorded) Values('$name','$birthdayStr','$timestampStr','$ageRecorded')";
+$insertState = "INSERT INTO record_of_request2 (FName, SName, BirthDate, EntryDate, AgeRecorded, MarsAgeRecorded) Values('$Fname','$Sname','$birthdayStr','$timestampStr','$ageRecorded','$MarsageRecorded')";
 
 
 $conn->query($insertState);
