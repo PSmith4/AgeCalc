@@ -30,7 +30,7 @@ foreach ($data as $row){
 	{
 		echo $names[1];
 		echo "|";
-		$SqlStatment ="	UPDATE record_of_request2 SET FName=" . $names[0] ." , SName= ". $names[1] ." WHERE ID= ". $row['ID'] . ";";
+		$SqlStatment ="	UPDATE record_of_request2 SET FName='" . $names[0] . "' , SName= '". $names[1] ."' WHERE ID= '". $row['ID'] . "';";
 		echo $SqlStatment;
 		$conn->query($SQLStatment);
 	}
