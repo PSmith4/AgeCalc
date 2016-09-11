@@ -22,13 +22,16 @@ $data=$conn->query($callState);
 foreach ($data as $row){
 	echo $row['FName'];
 	echo "|";
+	echo $row['ID'];
 	$names= explode(" ", $row['FName']);
 	echo $names[0];
 	echo "|";
 	if ( count($names)>1)
 	{
 		echo $names[1];
+		echo "|";
 		$SqlStatment ="	UPDATE record_of_request2 SET FName=" . $names[0] ." , SName= ". $names[1] ." WHERE ID= ". $row['ID'] . ";";
+		echo $SqlStatment;
 		$conn->query($SQLStatment);
 	}
 }
