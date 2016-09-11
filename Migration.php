@@ -15,9 +15,13 @@ echo "connected\r\n";
 $SQLStatment = "DROP TABLE IF EXISTS `record_of_request2`;"; 
 if ($conn->query($SQLStatment) === TRUE){ echo "Drop Done";} 
 else {echo "Error dropping " . $conn->error;}
-$SQLStatment ="CREATE TABLE `record_of_request2` (  `ID` int NOT NULL AUTO_INCREMENT,  `FName` mediumtext,  `SName` mediumtext,  `BirthDate` datetime DEFAULT NULL,  `EntryDate` datetime DEFAULT NULL,  `AgeRecorded` int DEFAULT NULL,  `MarsAgeRecorded` int DEFAULT NULL,  PRIMARY KEY (`ID`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8; INSERT INTO record_of_request2 (FName, BirthDate, EntryDate, AgeRecorded) Select Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
+$SQLStatment ="CREATE TABLE `record_of_request2` (  `ID` int NOT NULL AUTO_INCREMENT,  `FName` mediumtext,  `SName` mediumtext,  `BirthDate` datetime DEFAULT NULL,  `EntryDate` datetime DEFAULT NULL,  `AgeRecorded` int DEFAULT NULL,  `MarsAgeRecorded` int DEFAULT NULL,  PRIMARY KEY (`ID`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;";
 if ($conn->query($SQLStatment) === TRUE){ echo "Tabel Recreation don";} 
 else {echo "Error recreating " . $conn->error;}
+
+$SQLStatment ="INSERT INTO record_of_request2 (FName, BirthDate, EntryDate, AgeRecorded) Select Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
+if ($conn->query($SQLStatment) === TRUE){ echo "Tabel population don";} 
+else {echo "Error Populating " . $conn->error;}
 
 $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
