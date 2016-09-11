@@ -31,6 +31,6 @@ echo "<table>
 foreach ($data as $row){
 	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['SName'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td>  <td>" . $row['MarsAgeRecorded'] . "</td></tr>";
 }
-	
+$conn->close();	
 echo "</table>";
  ?>

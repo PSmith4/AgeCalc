@@ -26,6 +26,12 @@ else {echo "Error Populating " . $conn->error;}
 $callState = "SELECT ID, FName FROM record_of_request2;";
 $data=$conn->query($callState);
 
+echo "<table>";
+foreach ($data as $row){
+	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['ID'] . "</td></tr>";
+}
+echo "</table>";
+
 foreach ($data as $row){
 	echo $row['FName'];
 	echo "|";
@@ -43,5 +49,14 @@ foreach ($data as $row){
 		else {echo "Error updateing " . $conn->error;}
 	}
 }
+
+$callState = "SELECT ID, FName, SName FROM record_of_request2;";
+$data=$conn->query($callState);
+echo "<table>";
+foreach ($data as $row){
+	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['SName'] . "</td>  <td>" . $row['ID'] . "</td></tr>";
+}
+echo "</table>";
+
 $conn->close();
 ?>
