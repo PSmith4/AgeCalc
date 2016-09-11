@@ -12,15 +12,15 @@ if ($conn->connect_error) {
 }
 echo "connected<br>";
 
-$SQLStatment = "DROP TABLE IF EXISTS `record_of_request2`;"; 
-if ($conn->query($SQLStatment) === TRUE){ echo "Drop Done<br>";} 
+$drop = "DROP TABLE IF EXISTS `record_of_request2`;"; 
+if ($conn->query($drop) === TRUE){ echo "Drop Done<br>";} 
 else {echo "Error dropping " . $conn->error;}
-$SQLStatment ="CREATE TABLE `record_of_request2` (  `ID` int NOT NULL AUTO_INCREMENT,  `FName` mediumtext,  `SName` mediumtext,  `BirthDate` datetime DEFAULT NULL,  `EntryDate` datetime DEFAULT NULL,  `AgeRecorded` int DEFAULT NULL,  `MarsAgeRecorded` int DEFAULT NULL,  PRIMARY KEY (`ID`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;";
-if ($conn->query($SQLStatment) === TRUE){ echo "Tabel Recreation don<br>";} 
+$creat ="CREATE TABLE `record_of_request2` (  `ID` int NOT NULL AUTO_INCREMENT,  `FName` mediumtext,  `SName` mediumtext,  `BirthDate` datetime DEFAULT NULL,  `EntryDate` datetime DEFAULT NULL,  `AgeRecorded` int DEFAULT NULL,  `MarsAgeRecorded` int DEFAULT NULL,  PRIMARY KEY (`ID`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;";
+if ($conn->query($creat) === TRUE){ echo "Tabel Recreation don<br>";} 
 else {echo "Error recreating " . $conn->error;}
 
-$SQLStatment ="INSERT INTO record_of_request2 (FName, BirthDate, EntryDate, AgeRecorded) Select Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
-if ($conn->query($SQLStatment) === TRUE){ echo "Tabel population don<br>";} 
+$insert ="INSERT INTO record_of_request2 (FName, BirthDate, EntryDate, AgeRecorded) Select Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
+if ($conn->query($insert) === TRUE){ echo "Tabel population don<br>";} 
 else {echo "Error Populating " . $conn->error;}
 
 $callState = "SELECT ID, FName FROM record_of_request2;";
@@ -53,8 +53,8 @@ foreach ($data as $row){
 	}
 }
 
-$callState = "SELECT ID, FName, SName FROM record_of_request2;";
-$data2=$conn->query($callState);
+$callState2 = "SELECT ID, FName, SName FROM record_of_request2;";
+$data2=$conn->query($callState2);
 echo "<table>";
 foreach ($data2 as $row){
 	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['SName'] . "</td>  <td>" . $row['ID'] . "</td></tr>";
