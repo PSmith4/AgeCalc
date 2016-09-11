@@ -21,10 +21,10 @@ $data=$conn->query($callState);
 
 foreach ($data as $row){
 	echo $row['FName'];
-	echo "\r\n";
+	echo "|";
 	$names= explode(" ", $row['FName']);
 	echo $names[0];
-	echo "\r\n";
+	echo "|";
 	if ( count($names)>1)
 	{
 		echo $names[1];
