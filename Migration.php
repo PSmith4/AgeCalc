@@ -4,10 +4,7 @@ $servername =  "localhost";
 $username = "ageCalc";
 $password = "password";
 $dbname =  "ageCalcRecords";
-echo $servername;
-echo $username;
-echo $password;
-echo $dbname;
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
