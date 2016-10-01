@@ -1,9 +1,9 @@
 <?php
 echo "start\r\n";
 $servername =  "localhost";
-$username = getenv("DB_USERNAME");
-$password = getenv("DB_PASSWORD");
-$dbname =  getenv("DB_DATABASE");
+$username = "ageCalc";
+$password = "password";
+$dbname =  "ageCalcRecords";
 echo $servername;
 echo $username;
 echo $password;

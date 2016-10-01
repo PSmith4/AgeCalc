@@ -1,9 +1,9 @@
 <?php
 echo "start";
 $servername =  "localhost";
-$username = getenv("DB_USERNAME");
-$password = getenv("DB_PASSWORD");
-$dbname =  getenv("DB_DATABASE");
+$username = "ageCalc";
+$password = "password";
+$dbname =  "ageCalcRecords";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
