@@ -1,6 +1,6 @@
 <?php
 echo "start";
-$servername =  "192.168.33.10";
+$servername =  "localhost";
 $username = "ageCalc";
 $password = "password";
 $dbname =  "ageCalcRecords";
