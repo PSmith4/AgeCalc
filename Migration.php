@@ -1,10 +1,9 @@
 <?php
 echo "start\r\n";
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$servername = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$dbname =  substr($url["path"], 1);
+$servername =  "localhost";
+$username = getenv("DB_USERNAME");
+$password = getenv("DB_PASSWORD");
+$dbname =  getenv("DB_DATABASE");
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
