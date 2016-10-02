@@ -13,6 +13,8 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState) or trigger_error($conn->error);
+$numRows = mysql_num_rows($data);
+echo $numRows;
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
@@ -24,6 +26,7 @@ $conn->close();
 
 
 foreach ($data as $row){
+	echo $row['1']
 	echo $row['Name'];
 	echo $row['BirthDate'];
 	echo $row['EntryDate'];
