@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
 
 
-$data=$conn->query($callState);
+$data=$conn->query($callState) or trigger_error($conn->error);
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
