@@ -18,7 +18,7 @@ $conn->close();
 
 if ($data->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $data->fetch_assoc()) {
        	echo "_";	
 		echo $row['Name'];
 		echo $row['BirthDate'];
