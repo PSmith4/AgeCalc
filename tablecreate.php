@@ -15,6 +15,7 @@ $creat ="CREATE TABLE `record_of_request` (`ID` int(11) NOT NULL AUTO_INCREMENT,
 if ($conn->query($creat) === TRUE){ echo "Tabel Recreation don<br>";} 
 else {echo "Error recreating " . $conn->error;}
 
+$insertState = "INSERT INTO record_of_request (Name, BirthDate, EntryDate, AgeRecorded) Values('Test name','$birthdayStr','2016-08-10 00:00:00','66')";
 
 $conn->close();
 ?>
