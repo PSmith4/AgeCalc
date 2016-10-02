@@ -23,7 +23,8 @@ $conn->close();
 
 
 foreach ($data as $row){
-	echo $row['1'];
+	echo "_";	
+	echo $row[1];
 	echo $row['Name'];
 	echo $row['BirthDate'];
 	echo $row['EntryDate'];
