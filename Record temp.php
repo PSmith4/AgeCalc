@@ -21,18 +21,15 @@ if(empty($data)){
 }
 
 $conn->close();
-echo '<link rel="stylesheet" type="text/css" href="css/style.css"/>';
-echo "<table> 
-	<tr>
-    <th>Name</th>
-    <th>Entered Birtday</th> 
-    <th>Date Entered</th>
-	<th>Age Reported</th>
-	</tr>";
+
 
 foreach ($data as $row){
-	echo "<tr> <td>" . $row['Name'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td> </tr>";
+	echo $row['Name'];
+	echo $row['BirthDate'];
+	echo $row['EntryDate'];
+	echo $row['AgeRecorded'];
+	echo "\r\n";
 }
-	
+	echo "done\r\n";
 echo "</table>";
  ?>
