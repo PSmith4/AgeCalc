@@ -13,6 +13,7 @@ $callState = "SELECT FName, SName, BirthDate, EntryDate, AgeRecorded, MarsAgeRec
 
 
 $data=$conn->query($callState);
+echo $data;
 
 $conn->close();
 echo '<link rel="stylesheet" type="text/css" href="css/style.css"/>';
