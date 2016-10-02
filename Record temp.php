@@ -13,9 +13,8 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState);
-if($conn->connect_errno){
-    printf("Connect failed: %s\n", $conn->connect_error);
-    exit();
+if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
 }
 if(empty($data)){
 	echo "nothing recived";
