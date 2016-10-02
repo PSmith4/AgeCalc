@@ -13,6 +13,9 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState);
+if(empty($data)){
+	echo "nothing recived";
+}
 
 $conn->close();
 echo '<link rel="stylesheet" type="text/css" href="css/style.css"/>';
