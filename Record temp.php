@@ -13,6 +13,10 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState);
+if($conn->connect_errno){
+    printf("Connect failed: %s\n", $conn->connect_error);
+    exit();
+}
 if(empty($data)){
 	echo "nothing recived";
 }
@@ -28,6 +32,7 @@ echo "<table>
 	</tr>";
 
 foreach ($data as $row){
+	echo $row
 	echo "<tr> <td>" . $row['Name'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td> </tr>";
 }
 	
