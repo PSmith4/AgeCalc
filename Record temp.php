@@ -18,7 +18,6 @@ if(empty($data)){
 	echo "nothing recived";
 }
 
-$conn->close();
 
 
 foreach ($data as $row){
