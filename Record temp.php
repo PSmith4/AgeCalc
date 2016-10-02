@@ -13,25 +13,25 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState) or die("Query $callState failed ".mysqli_error($conn));
-$numRows = $data->num_rows;
-echo $numRows;
-if(empty($data)){
-	echo "nothing recived";
-}
 
 $conn->close();
 
-
-foreach ($data as $row){
-	echo "_";	
-	echo $row[1];
-	echo $row['Name'];
-	echo $row['BirthDate'];
-	echo $row['EntryDate'];
-	echo $row['AgeRecorded'];
-	echo "\r\n";
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       	echo "_";	
+		echo $row['Name'];
+		echo $row['BirthDate'];
+		echo $row['EntryDate'];
+		echo $row['AgeRecorded'];
+		echo "\r\n";
+    }
 }
+else{
+	echo "nothing recived";
+}
+
 	echo "done\r\n";
 $data->close();
-echo "</table>";
+
  ?>
