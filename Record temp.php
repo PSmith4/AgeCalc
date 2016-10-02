@@ -13,7 +13,7 @@ $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_requ
 
 
 $data=$conn->query($callState) or die("Query $callState failed ".mysqli_error($conn));
-$numRows = $data->num_rows();
+$numRows = $data->num_rows;
 echo $numRows;
 if(empty($data)){
 	echo "nothing recived";
@@ -31,5 +31,6 @@ foreach ($data as $row){
 	echo "\r\n";
 }
 	echo "done\r\n";
+$data->close();
 echo "</table>";
  ?>
