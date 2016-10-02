@@ -31,7 +31,6 @@ echo "<table>
 	</tr>";
 
 foreach ($data as $row){
-	echo $row
 	echo "<tr> <td>" . $row['Name'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td> </tr>";
 }
 	
