@@ -26,7 +26,7 @@ echo "<table>
 	<th>Mars Age Reported</th>
 	</tr>";
 
-foreach ($data as $row){
+while($row = $data->fetch_assoc()) {
 	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['SName'] . "</td> <td> " . $row['BirthDate'] . "</td> <td>" . $row['EntryDate'] . "</td> <td>" . $row['AgeRecorded'] . "</td>  <td>" . $row['MarsAgeRecorded'] . "</td></tr>";
 }
 

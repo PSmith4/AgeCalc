@@ -33,7 +33,7 @@ foreach ($data as $row){
 }
 echo "</table>";
 
-foreach ($data as $row){
+while($row = $data->fetch_assoc()) {
 	echo $row['FName'];
 	echo "<br>";
 	echo $row['ID'];
@@ -55,7 +55,7 @@ foreach ($data as $row){
 $callState2 = "SELECT ID, FName, SName FROM record_of_request2;";
 $data2=$conn->query($callState2);
 echo "<table>";
-foreach ($data2 as $row){
+while($row = $data->fetch_assoc()) {
 	echo "<tr> <td>" . $row['FName'] . "</td>  <td>" . $row['SName'] . "</td>  <td>" . $row['ID'] . "</td></tr>";
 }
 echo "</table>";
