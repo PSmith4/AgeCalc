@@ -12,12 +12,9 @@ if ($conn->connect_error) {
 $callState = "SELECT Name, BirthDate, EntryDate, AgeRecorded FROM record_of_request;";
 
 
-$data=$conn->query($callState) or trigger_error($conn->error);
-$numRows = mysql_num_rows($data);
+$data=$conn->query($callState) or die("Query $callState failed ".mysqli_error($conn));
+$numRows = mysql_num_rows($data)or die ('couldnt count rows'.mysqli_error($conn));
 echo $numRows;
-if($conn->connect_error){
-    die("Connection failed: " . $conn->connect_error);
-}
 if(empty($data)){
 	echo "nothing recived";
 }
