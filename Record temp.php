@@ -4,7 +4,7 @@ $username = "ageCalc";
 $password = "password";
 $dbname =  "ageCalcRecords";
 
-$conn = new mysql_connect($servername, $username, $password);
+$conn = mysql_connect($servername, $username, $password);
 mysql_select_db($dbname, $conn);
 
 if ($conn->connect_error) {
