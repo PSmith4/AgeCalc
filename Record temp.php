@@ -16,7 +16,7 @@ $data=$conn->query($callState) or die("Query $callState failed ".mysqli_error($c
 
 $conn->close();
 
-if ($result->num_rows > 0) {
+if ($data->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
        	echo "_";	
